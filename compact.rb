@@ -65,11 +65,8 @@ module Couch
   end
 end
 
-@status=0
-
-
 def get_views(database)
-  views ||= []
+  views = []
   query = "/#{database}"
   query << '/_all_docs?startkey="_design/"&endkey="_design0"&include_docs=true'
   res = @server.get(query)
